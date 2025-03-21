@@ -1,0 +1,370 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 10px;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+/* Desktop layout */
+.container {
+    position: relative;
+    width: 90vw;
+    max-width: 1300px;
+    height: 85vh;
+    min-height: 600px;
+    border: 2px solid #000;
+    background: #fff;
+    display: flex;
+    margin: 0 auto;
+}
+
+/* Left section - 60% */
+.left-section {
+    width: 60%;
+    height: 100%;
+    border-right: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Left top */
+.left-top {
+    height: 90px;
+    width: 100%;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Left bottom with columns */
+.left-bottom {
+    flex-grow: 1;
+    display: flex;
+    width: 100%;
+}
+
+/* Columns */
+.column {
+    height: 100%;
+    flex: 1;
+}
+
+.column-1, .column-3 {
+    background-color: #D9D9D9;
+}
+
+/* Right section - 40% */
+.right-section {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Right top */
+.right-top {
+    height: 350px;
+    width: 100%;
+}
+
+/* Right middle */
+.right-middle {
+    height: 200px;
+    width: 100%;
+    background-color: #D9D9D9;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+/* Right bottom */
+.right-bottom {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mobile layout */
+.mobile-container {
+    display: none;
+    position: relative;
+    width: 95vw;
+    max-width: 400px;
+    height: 90vh;
+    min-height: 600px;
+    border: 2px solid #000;
+    background: #fff;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+/* Mobile top */
+.mobile-top {
+    height: 60px;
+    width: 100%;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mobile upper middle */
+.mobile-upper-middle {
+    height: 100px;
+    width: 100%;
+    background-color: #D9D9D9;
+}
+
+/* Mobile middle */
+.mobile-middle {
+    height: 100px;
+    width: 100%;
+}
+
+/* Mobile lower middle */
+.mobile-lower-middle {
+    height: 100px;
+    width: 100%;
+    background-color: #D9D9D9;
+}
+
+/* Mobile bottom */
+.mobile-bottom {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    border-top: 2px solid #000;
+}
+
+/* Mobile bottom left */
+.mobile-bottom-left {
+    width: 30%;
+    height: 100%;
+    border-right: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+}
+
+/* Mobile bottom right */
+.mobile-bottom-right {
+    width: 70%;
+    height: 100%;
+    background-color: #D9D9D9;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 768px) and (max-device-width: 812px) {
+    .container {
+        display: none;
+    }
+    
+    .mobile-container {
+        display: flex;
+    }
+}
+
+/* Item styles */
+.item {
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    margin: 8px;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Hover effect */
+.item:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Item title */
+.item-title {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 10px;
+    padding: 2px 4px;
+    text-align: center;
+    border-radius: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 5;
+}
+
+/* Content areas */
+.column-1, .column-2, .column-3, .right-top, .right-middle,
+.mobile-upper-middle, .mobile-middle, .mobile-lower-middle, .mobile-bottom-right {
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+/* Title styles */
+.section-title {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+}
+
+/* Mobile title adjustments */
+.mobile-top .section-title {
+    font-size: 18px;
+}
+
+.mobile-bottom-left .section-title {
+    font-size: 16px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup */
+.popup {
+    background-color: white;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-image {
+    width: 200px;
+    height: 200px;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-info {
+    width: 100%;
+    text-align: center;
+}
+
+.popup-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.popup-year {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.popup-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Mobile popup adjustments */
+@media (max-width: 768px) {
+    .popup {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    .popup-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .popup-info h2 {
+        font-size: 20px;
+    }
+    
+    .popup-year {
+        font-size: 16px;
+    }
+    
+    .popup-description {
+        font-size: 14px;
+    }
+}
+
+/* Image display */
+.popup-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Author style */
+.popup-author {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+/* No image placeholder */
+.no-image {
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.no-image::after {
+    content: "No image";
+    color: #999;
+    font-size: 14px;
+}
