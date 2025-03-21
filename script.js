@@ -148,7 +148,35 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
+    // Init page
+    async function initPage() {
+        console.log("Initializing...");
+        const items = await fetchItemsFromGoogleSheets();
+        
+        if (items.length === 0) {
+            console.error('No items found, using test data');
+            testWithSampleData();
+            return;
+        }
+        
+        distributeItems(items);
+    }
     
+    // Create test data
+    function testWithSampleData() {
+        const items = [];
+        for (let i = 1; i <= 39; i++) {
+            items.push({
+                id: i,
+                name: `Item${i}`,
+                author: `Author${i}`,
+                year: `${2000 + Math.floor(Math.random() * 23)}`,
+                description: `This is description for item ${i}.`
+            });
+        }
+        
+        distributeItems(items);
+    }
     
     // Distribute items to sections
     function distributeItems(items) {
